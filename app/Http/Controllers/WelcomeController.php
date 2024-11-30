@@ -16,12 +16,12 @@ class WelcomeController extends Controller
      */
     public function index(Request $request)
     {
-        // Check if the request is an AJAX request
+        
         if ($request->ajax()) {
             return $this->getDatatableResponse();
         }
 
-        // Return the welcome view if not an AJAX request
+      
         return view('pages.tables.index');
     }
 
@@ -36,13 +36,13 @@ class WelcomeController extends Controller
         $data = DobLatestAction::select('Job_', 'Borough', 'Street_Name', 'Job_Type', 'Latest_Action_Date')
                                ->latest();
 
-        // Create a Datatable from the Eloquent query
+      
         $table = Datatables::eloquent($data);
         
-        // Add an index column
+        
         $table->addIndexColumn();
 
-        // Return the response as JSON
+      
         return $table->make(true);
     }
 }

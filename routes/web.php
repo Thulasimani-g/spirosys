@@ -16,7 +16,7 @@ use App\Http\Controllers\ReportController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.tables.index');
 });
 Route::get('/home',[WelcomeController::class,'index'])->name('home');
 Route::get('/report',[ReportController::class,'index'])->name('report');
