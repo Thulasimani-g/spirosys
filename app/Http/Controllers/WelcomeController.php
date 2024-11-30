@@ -22,7 +22,7 @@ class WelcomeController extends Controller
         }
 
         // Return the welcome view if not an AJAX request
-        return view('welcome');
+        return view('pages.tables.index');
     }
 
     /**
